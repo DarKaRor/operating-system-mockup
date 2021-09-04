@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+#screen {
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
+    top:0;
+}
+
+#canvas{
+    z-index: 0;
+    position:fixed;
+    top:0;
+}
+
+
+#desktop {
+    width: 100%;
+    height: 100%;
+}
+
+#desktop .background {
+    width: 100%;
+    height: 95%;
+    padding: 20px;
+}
+
+.background.hasImage {
+    background-image: url("https://elpuertoespacial.files.wordpress.com/2018/12/ps4wallpapers-com_5a6308ad94dee_persona5wall.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.items {
+    list-style: none;
+    display: flex;
+    gap: 20px 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.items .item .img-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+
+.items .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.items .item {
+    border: 2px solid transparent;
+    padding: 5px;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;}
+
+.items .item:hover,.items .item.active{
+    border: 2px solid #657e9c;
+    background-color: rgba(171, 171, 200, 0.5);
+}
+
+.items .item.isDirect::before {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border: 2px solid rgb(230, 230, 230);
+    position: relative;
+    bottom: -55px;
+    left: calc(-55px / 3);
+    background-image: url(../img/direct.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.items .item p {
+    color: white;
+    font-size: 80%;
+    word-wrap: break-word;
+    max-width: 65px;
+    padding-top: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.64);
+
+    /* Possibly change */
+    pointer-events: none;
+}
+
+#desktop .bar {
+    width: 100%;
+    background: rgb(72, 72, 80);
+    background: linear-gradient(45deg, rgba(72, 72, 80, 1) 0%, rgba(19, 19, 23, 1) 100%);
+    height: 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.39);
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar-items {
+    display: flex;
+}
+
+.bar .tools, .bar-item {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.bar-item{
+    padding: 1.2vh 0vw 1.2vh 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bar-item #menu {
+    filter: grayscale(100%) brightness(200%);
+    -webkit-filter: grayscale(100%) brightness(200%);
+    -moz-filter: grayscale(100%) brightness(200%);
+    transition: filter 0.2s ease-in-out;
+}
+
+.bar-item:hover #menu {
+    filter: none;
+    
+}
+
+/* .bar-item.open{
+    border-bottom: 2px solid rgb(149, 149, 230);
+} */
+
+.bar-item.open::before{
+    content:"";
+    display:block;
+    height:2px;
+    width:calc(50px * 0.8);
+    background-color:rgb(137, 137, 243);
+    position: absolute;
+    bottom:0;
+    transition:width 0.2s ease-in-out;
+}
+
+.bar-item.open:hover::before{
+    width:calc(50px * 1);
+}
+
+.bar-item.active{
+    background-color: rgba(167, 167, 167, 0.568);
+}
+
+.bar-item.active:hover{
+    background-color: rgba(167, 167, 167, 0.781);
+}
+
+.tools:hover, .bar-item:hover{
+    background-color: rgba(90, 90, 90, 0.424);
+}
+
+.bar div, .bar-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

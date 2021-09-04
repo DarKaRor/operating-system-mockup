@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Operative System</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="screen">
+        <section id="desktop">
+            <div class="background hasImage">
+                <ul class="items">
+                    <li class="item isDirect">
+                        <div class="img-container">
+                            <img src="./img/aseprite.png" alt="">
+                        </div>
+                        <p>Aseprite</p>
+                    </li>
+                    <li class="item">
+                        <div class="img-container">
+                            <img src="./img/folder.png" alt="">
+                        </div>
+                        <p>Documents</p>
+                    </li>
+                    <li class="item">
+                        <div class="img-container">
+                            <img src="./img/thisPC.png" alt="">
+                        </div>
+                        <p>This PC</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="bar">
+                <ul class="bar-items">
+                    <li class="bar-item"><img src="./img/logo.png" alt="" id="menu"></li>
+                    <li class="bar-item open active"><img src="./img/aseprite.png" alt=""></li>
+                    <li class="bar-item open"><img src="./img/aseprite.png" alt="" ></li>
+                    <li class="bar-item"><img src="./img/aseprite.png" alt="" ></li>
+                </ul>
+                <div class="tools"></div>
+            </div>
+        </section>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
